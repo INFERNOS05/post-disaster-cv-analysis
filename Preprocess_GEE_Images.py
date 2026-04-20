@@ -33,21 +33,32 @@ def process_tif(file_path, output_path):
 
     # Open GeoTIFF file
     with rasterio.open(file_path) as src:
-        img = src.read(1)   # Read first band (single-channel data)
-
+        img = src.read()  # shape: (channels, H, W)
+        img = np.nan_to_num(img)
     # Replace NaN values with zero to avoid computation issues
     img = np.nan_to_num(img)
 
-    # Normalize pixel values to range [0, 1]
-    img_min, img_max = img.min(), img.max()
-    img = (img - img_min) / (img_max - img_min + 1e-8)
+    # Normalize each channel independently
+    for i in range(img.shape[0]):
+        band = img[i]
+        band_min, band_max = band.min(), band.max()
+        img[i] = (band - band_min) / (band_max - band_min + 1e-8)
 
-    # Resize image to fixed dimensions (e.g., 256x256)
-    img_resized = cv2.resize(img, (IMAGE_SIZE, IMAGE_SIZE))
+    # Resize each channel
+    resized_channels = []
+    for i in range(img.shape[0]):
+        resized = cv2.resize(img[i], (IMAGE_SIZE, IMAGE_SIZE))
+        resized_channels.append(resized)
 
-    # Convert single-channel image to 3-channel (RGB-like format)
-    img_3ch = np.stack([img_resized] * 3, axis=-1)
+    img_resized = np.stack(resized_channels, axis=-1)  # (H, W, C)
 
+    # Ensure exactly 3 channels
+    if img_resized.shape[-1] >= 3:
+        img_3ch = img_resized[:, :, :3]
+    else:
+        img_3ch = np.repeat(img_resized, 3, axis=-1)
+
+    img_3ch = img_3ch.astype(np.float32) # Ensure dtype consistency
     # Save processed image as NumPy array (.npy)
     np.save(output_path, img_3ch)
 
