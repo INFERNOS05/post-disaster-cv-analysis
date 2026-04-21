@@ -33,7 +33,7 @@ class GridAnalyzer:
             grid[idx]["count"] += 1
             grid[idx]["damage_sum"] += det["class"]
 
-        # 🔥 FINAL SCORING
+        
         for g in grid:
             if g["count"] > 0:
                 severity = g["damage_sum"] / g["count"]

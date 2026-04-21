@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def overlay_heatmap_on_image(image_path, heatmap, alpha=0.5):
+def overlay_heatmap_on_image(image_path, heatmap, alpha=0.25):
     img = cv2.imread(image_path)
 
     heatmap_resized = cv2.resize(heatmap, (img.shape[1], img.shape[0]))
@@ -20,14 +20,31 @@ def draw_clusters(image, clusters, grid_size=16):
     cell_h = h // grid_size
     cell_w = w // grid_size
 
+    cluster_groups = {}
+
     for c in clusters:
-        i, j = c["cell"]
+        cid = c["cluster_id"]
+        cluster_groups.setdefault(cid, []).append(c["cell"])
 
-        x1 = j * cell_w
-        y1 = i * cell_h
-        x2 = x1 + cell_w
-        y2 = y1 + cell_h
+    for cid, cells in cluster_groups.items():
+        xs, ys = [], []
 
-        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
+        for (i, j) in cells:
+            x1 = j * cell_w
+            y1 = i * cell_h
+            x2 = x1 + cell_w
+            y2 = y1 + cell_h
+
+            xs.extend([x1, x2])
+            ys.extend([y1, y2])
+
+        # big bounding box per cluster
+        cv2.rectangle(
+            image,
+            (min(xs), min(ys)),
+            (max(xs), max(ys)),
+            (0, 0, 255),
+            3
+        )
 
     return image
