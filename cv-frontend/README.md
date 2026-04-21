@@ -2,7 +2,7 @@
 
 A modern, professional Streamlit dashboard for AI-powered satellite imagery analysis.
 
-## 🚀 Features
+## Features
 
 - **Dashboard Home**: Overview with KPI cards and quick navigation
 - **Upload Module**: Drag-and-drop satellite image upload with metadata display
@@ -12,13 +12,13 @@ A modern, professional Streamlit dashboard for AI-powered satellite imagery anal
 - **Settings**: Configurable analysis parameters
 - **About**: Project information and team details
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.8+
 - Streamlit 1.35+
 - See `requirements.txt` for full dependencies
 
-## 🛠️ Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -31,7 +31,7 @@ cd CV_Frontend
 pip install -r requirements.txt
 ```
 
-## ▶️ Running the Application
+## Running the Application
 
 Start the Streamlit dashboard:
 
@@ -41,7 +41,7 @@ streamlit run app.py
 
 The application will open in your default browser at `http://localhost:8501`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 CV_Frontend/
@@ -68,7 +68,7 @@ CV_Frontend/
 └── requirements.txt
 ```
 
-## 🎨 Design Features
+## Design Features
 
 - Clean, professional enterprise dashboard design
 - Modern card-based layout with soft shadows
@@ -77,7 +77,7 @@ CV_Frontend/
 - Elegant typography with clear hierarchy
 - Smooth transitions and interactions
 
-## 🔧 Configuration
+## Configuration
 
 Edit `config/theme.py` to customize:
 - Color palette
@@ -85,29 +85,13 @@ Edit `config/theme.py` to customize:
 - Spacing
 - Card styles
 
-## 📊 Data
+## Data
 
 Currently uses dummy data for demonstration. To integrate real AI models:
 1. Replace `data/dummy_data.py` with actual model outputs
 2. Update `utils/analysis_stub.py` with real analysis pipeline
 3. Implement image processing in `utils/image_utils.py`
 
-## 🤝 Contributing
-
-This is an OST Project 2026 initiative. For contributions, please contact the project team.
-
-## 📄 License
-
-[Add your license here]
-
-## 👥 Team
-
-**OST Project 2026**
-- Project Lead & ML Engineer
-- Computer Vision Specialist
-- Full-Stack Developer
-- UI/UX Designer
-- Data Scientist
 
 ---
 
