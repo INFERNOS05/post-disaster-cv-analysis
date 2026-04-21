@@ -1,0 +1,135 @@
+═══════════════════════════════════════════════════════════════
+  🛰️  CV DISASTER ASSESSMENT DASHBOARD - COMMAND REFERENCE
+═══════════════════════════════════════════════════════════════
+
+📦 INSTALLATION
+───────────────────────────────────────────────────────────────
+Install all dependencies:
+  pip3 install -r requirements.txt
+
+Install Streamlit only:
+  pip3 install streamlit
+
+Upgrade all packages:
+  pip3 install -r requirements.txt --upgrade
+
+───────────────────────────────────────────────────────────────
+
+🚀 RUNNING THE APP
+───────────────────────────────────────────────────────────────
+Option 1 - Using startup script (recommended):
+  ./start_app.sh
+
+Option 2 - Direct command with custom port:
+  streamlit run app.py --server.port 8502
+
+Option 3 - Default port (8501):
+  streamlit run app.py
+
+Option 4 - With auto-reload on file changes:
+  streamlit run app.py --server.runOnSave true
+
+───────────────────────────────────────────────────────────────
+
+🌐 ACCESSING THE APP
+───────────────────────────────────────────────────────────────
+Local URL:
+  http://localhost:8502
+
+Or default port:
+  http://localhost:8501
+
+───────────────────────────────────────────────────────────────
+
+🛑 STOPPING THE APP
+───────────────────────────────────────────────────────────────
+Press: Ctrl + C
+
+───────────────────────────────────────────────────────────────
+
+🔧 TROUBLESHOOTING COMMANDS
+───────────────────────────────────────────────────────────────
+Check if Streamlit is installed:
+  pip3 show streamlit
+
+Check Python version:
+  python3 --version
+
+List installed packages:
+  pip3 list
+
+Find process using port 8502:
+  lsof -i :8502
+
+Kill process on port 8502:
+  kill -9 $(lsof -t -i:8502)
+
+───────────────────────────────────────────────────────────────
+
+📊 TESTING COMMANDS
+───────────────────────────────────────────────────────────────
+Run Python syntax check:
+  python3 -m py_compile app.py
+
+Check for import errors:
+  python3 -c "import streamlit; import cv2; import pandas; print('All imports OK')"
+
+───────────────────────────────────────────────────────────────
+
+🎯 QUICK START (COPY-PASTE)
+───────────────────────────────────────────────────────────────
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Run the app
+streamlit run app.py --server.port 8502
+
+# Open in browser
+# http://localhost:8502
+
+───────────────────────────────────────────────────────────────
+
+💡 USEFUL OPTIONS
+───────────────────────────────────────────────────────────────
+Run on different port:
+  streamlit run app.py --server.port 8503
+
+Run without opening browser:
+  streamlit run app.py --server.headless true
+
+Run with specific theme:
+  streamlit run app.py --theme.base dark
+
+───────────────────────────────────────────────────────────────
+
+📁 FILE LOCATIONS
+───────────────────────────────────────────────────────────────
+Main app:           app.py
+Dependencies:       requirements.txt
+Backend pipeline:   Backend/pipeline.py
+Backend wrapper:    utils/backend_integration.py
+Theme config:       config/theme.py
+CSS styling:        components/css_injector.py
+
+───────────────────────────────────────────────────────────────
+
+✅ VERIFICATION CHECKLIST
+───────────────────────────────────────────────────────────────
+□ Python 3.9+ installed
+□ pip3 working
+□ Dependencies installed (pip3 install -r requirements.txt)
+□ Streamlit installed (pip3 show streamlit)
+□ Port 8502 available
+□ No syntax errors (python3 -m py_compile app.py)
+
+───────────────────────────────────────────────────────────────
+
+🎓 FIRST TIME SETUP
+───────────────────────────────────────────────────────────────
+1. cd CV_Frontend
+2. pip3 install -r requirements.txt
+3. chmod +x start_app.sh
+4. ./start_app.sh
+5. Open http://localhost:8502 in browser
+
+═══════════════════════════════════════════════════════════════

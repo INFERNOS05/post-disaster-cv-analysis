@@ -1,0 +1,121 @@
+╔══════════════════════════════════════════════════════════════╗
+║   CV DISASTER ASSESSMENT DASHBOARD - QUICK REFERENCE        ║
+╚══════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🚀 START THE APP                                             │
+└──────────────────────────────────────────────────────────────┘
+
+  streamlit run app.py --server.port 8502
+
+  Then open: http://localhost:8502
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ ✅ VERIFY SETUP                                              │
+└──────────────────────────────────────────────────────────────┘
+
+  python3 test_integration.py
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📋 USAGE WORKFLOW                                            │
+└──────────────────────────────────────────────────────────────┘
+
+  1. Go to "Upload & Process" tab
+  2. Upload PRE-disaster satellite image
+  3. Upload POST-disaster satellite image
+  4. Click "Run Full Damage Assessment Pipeline"
+  5. Wait 30-60 seconds for processing
+  6. Navigate through tabs to view results:
+     - Tab 2: CV Processing Pipeline (7 stages)
+     - Tab 3: Damage Assessment (KPIs, metrics)
+     - Tab 4: Heatmap Analysis (clusters, grid)
+     - Tab 5: Reports & Export (downloads)
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📊 WHAT YOU GET                                              │
+└──────────────────────────────────────────────────────────────┘
+
+  ✓ YOLO-based building detection
+  ✓ PRE/POST comparison
+  ✓ Change detection map
+  ✓ Damage severity classification
+  ✓ Grid-based analysis (16×16)
+  ✓ Cluster detection (DBSCAN)
+  ✓ Priority heatmap
+  ✓ Comprehensive metrics
+  ✓ Downloadable reports (PNG/CSV/TXT)
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📁 KEY FILES                                                 │
+└──────────────────────────────────────────────────────────────┘
+
+  app.py                          Main Streamlit application
+  Backend/best.pt                 YOLO model (18.3 MB) ✅
+  utils/backend_integration.py    Backend wrapper
+  requirements.txt                Python dependencies
+  test_integration.py             Integration test
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🔧 TROUBLESHOOTING                                           │
+└──────────────────────────────────────────────────────────────┘
+
+  Missing packages:
+    pip3 install -r requirements.txt
+
+  Port already in use:
+    streamlit run app.py --server.port 8503
+
+  Check setup:
+    python3 test_integration.py
+
+  Stop the app:
+    Press Ctrl+C in terminal
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 📚 DOCUMENTATION                                             │
+└──────────────────────────────────────────────────────────────┘
+
+  HOW_TO_RUN.md              Quick start guide
+  STARTUP_GUIDE.md           Comprehensive guide
+  INTEGRATION_COMPLETE.md    Technical details
+  FINAL_SUMMARY.md           Project summary
+  COMMANDS.txt               Command reference
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ ✨ STATUS                                                    │
+└──────────────────────────────────────────────────────────────┘
+
+  ✅ Backend integration: COMPLETE
+  ✅ Model path: Backend/best.pt (verified)
+  ✅ All dependencies: INSTALLED
+  ✅ All tests: PASSING
+  ✅ Ready for production: YES
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ 🎯 METRICS PROVIDED                                          │
+└──────────────────────────────────────────────────────────────┘
+
+  • Overall classification (Low/Medium/Severe)
+  • Severity score (0-10)
+  • PRE buildings detected
+  • POST buildings detected
+  • Building density drop
+  • Damage score & percentage
+  • Total affected area (%)
+  • Low/Medium/Severe damage distribution
+  • Cluster count & details
+  • Grid priority scores
+  • Confidence level
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  Ready to run! Execute: streamlit run app.py --server.port 8502  ║
+╚══════════════════════════════════════════════════════════════╝
