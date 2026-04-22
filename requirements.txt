@@ -1,0 +1,11 @@
+matplotlib==3.10.8
+numpy==2.4.4
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+pandas==3.0.2
+Pillow==12.2.0
+plotly==5.24.1
+rasterio==1.5.0
+scikit_learn==1.8.0
+streamlit==1.37.1
+ultralytics==8.3.63
