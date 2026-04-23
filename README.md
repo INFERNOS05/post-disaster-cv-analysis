@@ -1,4 +1,5 @@
 # GeoDamageMapper
+The project has been developed by AIML students.
 
 ## Overview
 
